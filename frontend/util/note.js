@@ -18,6 +18,7 @@ const createGainNode = () => {
 
 class Note {
   constructor(freq) {
+    this.freq = freq;
     this.oscillatorNode = createOscillator(freq);
     this.gainNode = createGainNode();
     this.oscillatorNode.connect(this.gainNode);

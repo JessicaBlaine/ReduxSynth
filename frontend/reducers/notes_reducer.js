@@ -17,8 +17,8 @@ const notes = (state = [], action) => {
     case 'KEY_RELEASED':
       if (isValidNote && idx !== -1) {
         return [
-          state.slice(0, idx),
-          state.slice(idx + 1),
+          ...state.slice(0, idx),
+          ...state.slice(idx + 1),
         ];
       }
       return state;

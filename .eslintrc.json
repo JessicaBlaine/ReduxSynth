@@ -8,5 +8,8 @@
     "globals": {
       "document": true,
       "window": true
+    },
+    "rules": {
+      "arrow-parens": ["error", "as-needed"]
     }
 }

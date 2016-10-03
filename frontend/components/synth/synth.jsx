@@ -3,6 +3,7 @@ import $ from 'jquery';
 
 import { NOTE_NAMES, TONES } from '../../util/tones';
 import Note from '../../util/note';
+import NoteKey from './note_key';
 
 class Synth extends React.Component {
   constructor(props) {
@@ -42,8 +43,17 @@ class Synth extends React.Component {
 
   render() {
     this.playNotes();
+    const noteKeys = NOTE_NAMES.map(note => (
+      <NoteKey
+        key={note}
+        note={note}
+        pressed={!this.props.notes.includes(note)}
+      />
+    ));
     return (
-      <ul />
+      <div className="synth">
+        {noteKeys}
+      </div>
     );
   }
 }

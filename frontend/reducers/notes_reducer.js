@@ -2,7 +2,7 @@
 import { NOTE_NAMES } from '../util/tones';
 import { KEY_PRESSED, KEY_RELEASED } from '../actions/note_actions';
 
-const notes = (state = [], action) => {
+const notesReducer = (state = [], action) => {
   const isValidNote = NOTE_NAMES.includes(action.key);
   const idx = state.indexOf(action.key);
 
@@ -28,4 +28,4 @@ const notes = (state = [], action) => {
   }
 };
 
-export default notes;
+export default notesReducer;
